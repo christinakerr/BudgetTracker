@@ -15,5 +15,15 @@ const staticFilesToPreCache = [
 ].concat(iconFiles);
 
 self.addEventListener("install", function (evt) {
+    evt.waitUntil(
+        caches.open(CACHE_NAME).then(cache => {
+            console.log("Your files were pre-cached successfully!");
+            return cache.addAll(staticFilesToPreCache);
+        })
+    );
+    self.skipWaiting();
+})
+
+self.addEventListener("activate", function (evt) {
     
 })
