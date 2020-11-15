@@ -7,7 +7,8 @@ const iconFiles = iconSizes.map(
 );
 
 const staticFilesToPreCache = [
-    "/",
+    "/index.html",
+    "/styles.css",
     "/index.js",
     "/db.js",
     "/favicon.ico",
